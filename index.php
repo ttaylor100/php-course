@@ -7,7 +7,7 @@
     <?php
     $name = "PHP Store";
     $credit = 1000;
-
+//this doesn't fucking work!!!!!!!!! Whomever did this tutorial left out KEY INFORMATIOIN!
 
     // Using two forward slashes we create comments in php.
     // Within the php tag, we can insert values into our HTML.
@@ -19,6 +19,8 @@
       $products['iPhone']=1000;
       $products['Toaster']=75;
 
+
+
       foreach($products as $key => $value){
 	    echo "<p>The ".$key." costs ".$value."</p>";
     }
@@ -27,8 +29,21 @@
     foreach($products as $key => $value){
       if($value <= $credit ){
       	echo "<p>".$key."</p>";
+
+        $amount=800;
+        $taxRate=0.0825;
+        $addedTax= $amount*$taxRate;  //amount = 800, tax = .0825
+        echo $addedTax;
+
       }
     }
+
+    function tax_calc($amount,$tax){
+      	$calculate_tax = $amount*$tax;
+      	$amount = round($amount+$calculate_tax,2);
+      	return $amount;
+      }
+
     ?>
   </body>
 </html>
